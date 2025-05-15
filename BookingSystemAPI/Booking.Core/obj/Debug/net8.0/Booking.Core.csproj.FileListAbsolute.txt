@@ -1,0 +1,13 @@
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\bin\Debug\net8.0\Booking.Core.deps.json
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\bin\Debug\net8.0\Booking.Core.dll
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\bin\Debug\net8.0\Booking.Core.pdb
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.AssemblyInfoInputs.cache
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.AssemblyInfo.cs
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.csproj.CoreCompileInputs.cache
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.sourcelink.json
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.dll
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\refint\Booking.Core.dll
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.pdb
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\ref\Booking.Core.dll
+E:\Back-end\ASP.NET Projects\BookingSystem\BookingSystemAPI\Booking.Core\obj\Debug\net8.0\Booking.Core.csproj.AssemblyReference.cache
