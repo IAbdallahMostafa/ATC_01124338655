@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Booking.Core.DTOs.Authentication;
+using Booking.Core.DTOs.Booking;
 using Booking.Core.DTOs.Category;
 using Booking.Core.DTOs.Event;
 using Booking.Core.Enities;
@@ -17,7 +18,12 @@ namespace Booking.API.Helpers
             CreateMap<CreateEventDTO, Event>().ForMember(src => src.Image, opt => opt.Ignore());
             CreateMap<UpdateEventDTO, Event>().ForMember(src => src.Image, opt => opt.Ignore());
 
+            CreateMap<BookingEventDTO, Book>().ForMember(src => src.Event, opt => opt.Ignore())
+                .ForMember(src => src.ApplicationUser, opt => opt.Ignore());
+
             CreateMap<RegisterDTO, ApplicationUser>();
+
+
         }
     }
 }

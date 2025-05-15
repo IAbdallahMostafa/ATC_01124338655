@@ -14,5 +14,6 @@ namespace Booking.Infrasturcture.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Event> Events { get; set; } 
+        public DbSet<Book> Books { get; set; }
     }
 }

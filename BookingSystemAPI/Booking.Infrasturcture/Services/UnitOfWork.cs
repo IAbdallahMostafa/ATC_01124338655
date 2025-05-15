@@ -8,7 +8,7 @@ namespace Booking.Infrasturcture.Services
         private readonly BookingDbContext _context;
         public ICategoryRepositry Categories { get; private set; }
         public IEventRepositry Events { get; private set; }
-
+        public IBookingRepositry Books { get; private set; }
         public IAuthenticationRepositry Authentication { get; private set; }
 
         public UnitOfWork(BookingDbContext context)
@@ -16,6 +16,7 @@ namespace Booking.Infrasturcture.Services
             _context = context;
             Categories = new CategoryRepositry(context);
             Events = new EventRepositry(context);
+            Books = new BookingRepositry(context);
         }
         public async Task<int> CompleteAsync()
         {

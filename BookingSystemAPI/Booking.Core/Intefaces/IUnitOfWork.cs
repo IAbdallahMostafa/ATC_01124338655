@@ -4,6 +4,7 @@
     {
         ICategoryRepositry Categories { get; }
         IEventRepositry Events { get; }
+        IBookingRepositry Books { get; }
         IAuthenticationRepositry Authentication { get; }
         Task<int> CompleteAsync();
 

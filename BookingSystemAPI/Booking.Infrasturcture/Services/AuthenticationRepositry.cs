@@ -196,8 +196,9 @@ namespace Booking.Infrasturcture.Services
 
             var allClaims = new[]
             {
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             }.Union(userClaims)
             .Union(roleCliams);
 
@@ -207,6 +208,7 @@ namespace Booking.Infrasturcture.Services
             var token = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,
                 audience: _jwtSettings.Audience,
+                claims: allClaims,
                 expires: DateTime.UtcNow.AddMinutes(_jwtSettings.ExpirationInMinutes),
                 signingCredentials: signutre
             );
