@@ -50,5 +50,21 @@ A full-featured system for managing bookings, categories, and events, with integ
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/IAbdallahMostafa/BookingSystem.git
+git clone https://github.com/IAbdallahMostafa/ATC_01124338655.git
 cd booking-system-api
+
+### 2. Navigate to the API project
+cd Booking.API
+
+### 3.Restore dependencies
+dotnet restore
+
+### 4.Run the API
+dotnet run
+
+### 5.Test via Swagger UI
+https://localhost:<port>/swagger
+
+### 6.Seeded Admin Credentials
+Username: Admin
+Password: P@$$w0rd
