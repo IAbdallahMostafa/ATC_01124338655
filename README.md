@@ -1,6 +1,6 @@
-# 🎟️ Booking System Web API
+# 🎟️ Booking System 
 
-A full-featured **.NET 8 Web API** for managing bookings, categories, and events, with integrated JWT authentication, role-based authorization, and Entity Framework Core.
+A full-featured system for managing bookings, categories, and events, with integrated JWT authentication, role-based authorization, and Entity Framework Core.
 
 ## 🔧 Technologies Used
 
@@ -15,18 +15,18 @@ A full-featured **.NET 8 Web API** for managing bookings, categories, and events
 
 ## 📁 Project Structure
 
-- `Booking.Infrastructure
+- Booking.Infrastructure
     - /Data - Database context
     - /Service - Implementation of all repositries
     - /Helpers - JWT Settings, and static class for roles
     - /Migrations - Database Migrations
     - /DatabaseIntializer - Interface and class to intiailze database (admin account and main roles)
-- `Booking.Core
+- Booking.Core
     - /Entities - BaseEnitity, Category, Event, Book, and Authentication Entities
     - /DTOs - DTOs for all entites
     - Interface - Generic inteface and all repositries interfaces
 - Booking.API
-  - /Controllers` — API endpoints for Account, Booking, Category, and Event
+  - /Controllers — API endpoints for Account, Booking, Category, and Event
   - /Helpers - MappingProfile to manage automapper, and Utiltilies to manage images constraints
     
 ---
@@ -50,5 +50,5 @@ A full-featured **.NET 8 Web API** for managing bookings, categories, and events
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/IAbdallahMostafa/bookingsystem.git
+git clone https://github.com/IAbdallahMostafa/BookingSystem.git
 cd booking-system-api
