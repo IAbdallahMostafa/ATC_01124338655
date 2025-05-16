@@ -45,7 +45,7 @@ A full-featured system for managing bookings, categories, and events, with integ
 
 ---
 
-## 🚀 How to Run
+## 🚀 Setup Instructions
 
 ### 1. Clone the repository
 
