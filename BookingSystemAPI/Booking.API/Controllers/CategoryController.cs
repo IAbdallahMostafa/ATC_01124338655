@@ -10,10 +10,10 @@ namespace Booking.API.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class CategoryController(IUnitOfWork _unit, IMapper _mapper) : ControllerBase
     {
         [HttpGet]
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> GetCategories()
         {
             var categories = await _unit.Categories.GetAllAsync();
@@ -21,6 +21,8 @@ namespace Booking.API.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [Authorize(Roles = "Admin,Editor")]
+
         public async Task<IActionResult> GetCategory(int id)
         {
             var category = await _unit.Categories.GetOneAsync(e => e.Id == id);
@@ -30,6 +32,7 @@ namespace Booking.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryDTO categoryDTO)
         {
             if (!ModelState.IsValid)
@@ -42,6 +45,7 @@ namespace Booking.API.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryDTO categoryDTO)
         {
             if (!ModelState.IsValid)
@@ -57,6 +61,8 @@ namespace Booking.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var category = await _unit.Categories.GetOneAsync(e => e.Id == id);

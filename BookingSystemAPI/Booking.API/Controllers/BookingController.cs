@@ -12,7 +12,7 @@ namespace Booking.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "NormalUser")]
     public class BookingController (IUnitOfWork _unit, IMapper _mapper, UserManager<ApplicationUser> _userManager) : ControllerBase
     {
         private string GetUserId()

@@ -1,16 +1,14 @@
-using Booking.API.Helpers;
 using Booking.Core.Enities.Authentication;
 using Booking.Core.Helpers;
 using Booking.Core.Intefaces;
 using Booking.Infrasturcture.Data;
+using Booking.Infrasturcture.DatabaseInitilizer;
 using Booking.Infrasturcture.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Text;
 namespace Booking.API
 {
     public class Program
@@ -118,8 +116,12 @@ namespace Booking.API
                 };
             });
 
-            
+            // Register IDBIntializer
+            builder.Services.AddScoped<IDBIntializer, DBIntializer>();
+
             var app = builder.Build();
+
+            SeedDB();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -129,7 +131,8 @@ namespace Booking.API
             }
 
             app.UseHttpsRedirection();
-
+            
+            
             app.UseAuthentication();
 
             app.UseAuthorization();
@@ -139,6 +142,17 @@ namespace Booking.API
             app.MapControllers();
 
             app.Run();
+
+            // DBInitializer
+            void SeedDB()
+            {
+                using (var scope = app.Services.CreateScope())
+                {
+                    var dbInitializer = scope.ServiceProvider.GetRequiredService<IDBIntializer>();
+                    dbInitializer.Initialize();
+                }
+            }
+
         }
     }
 }

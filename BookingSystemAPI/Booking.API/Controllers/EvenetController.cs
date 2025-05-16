@@ -3,6 +3,7 @@ using Booking.API.Helpers;
 using Booking.Core.DTOs.Event;
 using Booking.Core.Enities;
 using Booking.Core.Intefaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
     
 namespace Booking.API.Controllers
@@ -12,6 +13,7 @@ namespace Booking.API.Controllers
     public class EvenetController(IUnitOfWork _unit, IMapper _mapper) : ControllerBase
     {
         [HttpGet]
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> GetEvents()
         {
             var events = await _unit.Events.GetAllAsync();
@@ -19,6 +21,7 @@ namespace Booking.API.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> GetEvent(int id)
         {
             var eventToget = await _unit.Events.GetOneAsync(e => e.Id == id);
@@ -29,7 +32,7 @@ namespace Booking.API.Controllers
 
        
         [HttpPost]
-        
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> CreateEvent([FromForm] CreateEventDTO eventDTO)
         {
             if (ModelState.IsValid)
@@ -54,6 +57,7 @@ namespace Booking.API.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "Admin,Editor")]
         public async Task<IActionResult> UpdateEvent(int id, [FromForm] UpdateEventDTO eventDTO)
         {
             var eventToUpdate = await _unit.Events.GetOneAsync(e => e.Id == id);
@@ -81,6 +85,7 @@ namespace Booking.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteEvent(int id)
         {
             var eventToDelete = await _unit.Events.GetOneAsync(e => e.Id == id);
